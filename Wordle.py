@@ -2,11 +2,12 @@
 # Name:
 # Collaborators (if any):
 # Estimated time spent (hr):
+# Description of any added extensions:
 ########################################
 
-from WordleGraphics import WordleGWindow
-from WordleDictionary import FIVE_LETTER_WORDS
-from WordleGraphics import CORRECT_COLOR, PRESENT_COLOR, MISSING_COLOR
+from WordleGraphics import WordleGWindow, N_ROWS, N_COLS
+from english import ENGLISH_WORDS, is_english_word
+from WordleGraphics import CORRECT_COLOR, PRESENT_COLOR, MISSING_COLOR, UNKNOWN_COLOR
 import random
 
 def wordle():

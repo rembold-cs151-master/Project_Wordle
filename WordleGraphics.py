@@ -101,6 +101,8 @@ class WordleGWindow(GWindow):
             return msg
 
         def key_action(e):
+            if self._row < 0 or self._row >= N_ROWS:
+                return
             if isinstance(e, str):
                 letter = e.upper()
             else:
@@ -148,32 +150,41 @@ class WordleGWindow(GWindow):
         self._col = 0
 
     def get_square_letter(self, row, col):
+        """Returns the letter in the specified row and column."""
         return self._grid[row][col].get_square_letter()
 
     def set_square_letter(self, row, col, letter):
-        self._grid[row][col].set_square_letter(letter)
+        """Sets the letter in the specified row and column."""
+        self._grid[row][col].set_square_letter(letter.upper())
 
     def get_square_color(self, row, col):
+        """Returns the background color of the specified row and column."""
         return self._grid[row][col].get_color()
 
     def set_square_color(self, row, col, color):
+        """Sets the background color of the specified row and column."""
         self._grid[row][col].set_color(color)
 
     def get_key_color(self, letter):
-        return self._keys[letter].get_color()
+        """Returns the background color of the specified key."""
+        return self._keys[letter.upper()].get_color()
 
     def set_key_color(self, letter, color):
-        self._keys[letter].set_color(color)
+        """Sets the background color of the specified key."""
+        self._keys[letter.upper()].set_color(color)
 
     def get_current_row(self):
+        """Returns the current row number."""
         return self._row
 
     def set_current_row(self, row):
+        """Sets the current row number."""
         self._row = row
-        self._col = 0
-        for col in range(N_COLS):
-            self.set_square_letter(row, col, "")
-            self.set_square_color(row, col, UNKNOWN_COLOR)
+        if row >= 0 and row < N_ROWS:
+            self._col = 0
+            for col in range(N_COLS):
+                self.set_square_letter(row, col, "")
+                self.set_square_color(row, col, UNKNOWN_COLOR)
 
     def add_enter_listener(self, fn):
         self._listeners.append(fn)
@@ -204,7 +215,7 @@ class WordleSquare(GCompound):
 
     def set_square_letter(self, letter):
         self._letter = letter
-        self._label.set_label(letter)
+        self._label.set_label(letter.upper())
         x = (SQUARE_SIZE - self._label.get_width()) / 2
         y = (SQUARE_SIZE + ASCENT_FRACTION * self._label.get_ascent()) / 2
         self._label.set_location(x, y)
