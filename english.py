@@ -24325,7 +24325,7 @@ ENGLISH_WORDS = [
   "zymosis", "zymotic", "zymurgies", "zymurgy", "zyzzyva", "zyzzyvas"
 ]
 
-CAP_ENGLISH_WORDS = [word.upper() for word in ENGLISH_WORDS]
+CAPITAL_ENGLISH_WORDS = [word.upper() for word in ENGLISH_WORDS]
 
 if __name__ == "__main__":
     print("ENGLISH_WORDS contains {:,d} words.".format(len(ENGLISH_WORDS)))

@@ -6,7 +6,7 @@
 ########################################
 
 from WordleGraphics import WordleGWindow, N_ROWS, N_COLS
-from english import ENGLISH_WORDS, is_english_word
+from english import CAPITAL_ENGLISH_WORDS, is_english_word
 from WordleGraphics import CORRECT_COLOR, PRESENT_COLOR, MISSING_COLOR, UNKNOWN_COLOR
 import random
 
