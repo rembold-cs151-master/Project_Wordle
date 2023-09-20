@@ -2,12 +2,12 @@
 
 """
 This module defines a constant array called ENGLISH_WORDS that contains
-an alphabetized list of English words and a function is_english_word(s)
+an alphabetized list of English words and a function isEnglishWord(s)
 that tests whether the string s is a legal English word.  All words are
 stored in lower case.
 """
 
-def is_english_word(s):
+def isEnglishWord(s):
     """
     Returns True if s is a valid English word.
     """
@@ -23,6 +23,8 @@ def is_english_word(s):
         else:
             lh = mid + 1
     return False
+
+is_english_word = isEnglishWord
 
 # Constants
 
@@ -24324,8 +24326,6 @@ ENGLISH_WORDS = [
   "zymogenes", "zymogens", "zymologies", "zymology", "zymoses",
   "zymosis", "zymotic", "zymurgies", "zymurgy", "zyzzyva", "zyzzyvas"
 ]
-
-CAPITAL_ENGLISH_WORDS = [word.upper() for word in ENGLISH_WORDS]
 
 if __name__ == "__main__":
     print("ENGLISH_WORDS contains {:,d} words.".format(len(ENGLISH_WORDS)))
