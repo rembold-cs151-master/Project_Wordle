@@ -1,9 +1,10 @@
-########################################
+#################################################################
 # Name:
 # Collaborators (if any):
+# Generative AI transcript link (if any):
 # Estimated time spent (hr):
 # Description of any added extensions:
-########################################
+#################################################################
 
 from WordleGraphics import WordleGWindow, N_ROWS, N_COLS
 from english import ENGLISH_WORDS, is_english_word
