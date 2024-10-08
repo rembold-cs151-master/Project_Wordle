@@ -112,7 +112,7 @@ class WordleGWindow(GWindow):
                 if self._row < N_ROWS and self._col > 0:
                     self._col -= 1
                     sq = self._grid[self._row][self._col]
-                    sq.set_square_letter(" ")
+                    sq.set_square_letter("")
             elif letter == "<RETURN>" or letter == "<ENTER>":
                 self.show_message("")
                 for fn in self._listeners:
@@ -199,7 +199,7 @@ class WordleSquare(GCompound):
         GCompound.__init__(self)
         x = (GWINDOW_WIDTH - BOARD_WIDTH) / 2 + col * SQUARE_DELTA
         y = TOP_MARGIN + row * SQUARE_DELTA
-        self._letter = " "
+        self._letter = ""
         self._color = UNKNOWN_COLOR
         self._frame = GRect(SQUARE_SIZE, SQUARE_SIZE)
         self._frame.set_filled(True)
